@@ -1,0 +1,38 @@
+type Query {
+    getMenuItems: [Category!]
+    getDocumentDetails(id: ID!): Document
+    getDocumentBySlug(slug: String!): Document
+    getDocumentsForSubcategory(subcategoryId: ID!): [Document!]
+}
+
+type Category {
+    id: ID!
+    name: String!
+    slug: String!
+    iconUrl: String
+    subcategories: [Subcategory!]
+}
+
+type Subcategory {
+    id: ID!
+    name: String!
+    slug: String!
+}
+
+type Author {
+    github: String!
+    name: String
+}
+
+type Document {
+    id: ID!
+    slug: String!
+    category: Category!
+    subcategory: Subcategory!
+    title: String!
+    authors: [Author!]
+    content: String
+    tags: [String!]
+    createdAt: String!
+    updatedAt: String!
+}
