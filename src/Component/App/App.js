@@ -26,10 +26,12 @@ const App = () => {
       query Categories {
           getMenuItems {
               name
+              id
               iconUrl
               slug
               subcategories {
                   name
+                  id
                   slug
               }
           }
@@ -47,7 +49,7 @@ const App = () => {
 
     for (let i = 0; i < data.getMenuItems.length; i++) {
       array.push(
-        <NavLink className='NavBar-Item' key={uuid()} to={"/"+data.getMenuItems[i].slug}
+        <NavLink className='NavBar-Item' key={data.getMenuItems[i].id} to={"/"+data.getMenuItems[i].slug}
                  activeClassName='NavBar-Item-Active'>
 
 
@@ -72,16 +74,43 @@ const App = () => {
     return array
   }
 
-  const TestOne = () => {
-    return <p>TestOne</p>
+  const TestOne = (props) => {
+    const subcategory = props.match.params.category
+    const { loading, error, data } = useQuery(CategoriesQuery)
+
+    if (loading) return <p>Loading...</p>
+    if (error) return <p>Error :(</p>
+    if (data == null) return <p>Empty :(</p>
+
+    let array = []
+    array.push()
+
+    const menuitems = data.getMenuItems
+
+    for (let i = 0; i < menuitems.length; i++) {
+      if (menuitems[i].slug !== subcategory) continue
+
+      menuitems[i].subcategories.forEach((sub) => {
+        array.push(
+          <NavLink key={sub.id} to={`${subcategory}/${sub.slug}`} className='SideBar-Item'>
+            {sub.name}
+          </NavLink>
+        )
+      })
+    }
+
+    if (!subcategory) return 'FAIL'
+    return array
   }
 
-  const TestTwo = () => {
-    return <p>TestTwo</p>
+  const TestTwo = (props) => {
+    const id = JSON.stringify(props)
+    return <p>Test TWO {id}</p>
   }
 
-  const TestThree = () => {
-    return <p>TestThree</p>
+  const TestThree = (props) => {
+    const id = JSON.stringify(props)
+    return <p>Test THREE {id}</p>
   }
 
   return (
@@ -100,7 +129,6 @@ const App = () => {
 
           <div className='SideBar-Main'>
             <div className="SideBar-Items">
-              <p>Sidebar test</p>
               <Switch>
                 <Route path="/:category" exact component={TestOne} />
                 <Route path="/:category/:subcategory" exact component={TestTwo} />
