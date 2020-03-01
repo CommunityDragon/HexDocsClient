@@ -5,7 +5,7 @@ import { ApolloProvider, useQuery } from '@apollo/react-hooks'
 import ApolloClient, { gql } from 'apollo-boost'
 import { InMemoryCache } from 'apollo-cache-inmemory'
 
-import { BrowserRouter as Router, NavLink } from 'react-router-dom'
+import { BrowserRouter as Router, NavLink, Switch, Route } from 'react-router-dom'
 
 import { v4 as uuid } from 'uuid'
 
@@ -47,7 +47,7 @@ const App = () => {
 
     for (let i = 0; i < data.getMenuItems.length; i++) {
       array.push(
-        <NavLink className='NavBar-Item' key={uuid()} to={data.getMenuItems[i].slug}
+        <NavLink className='NavBar-Item' key={uuid()} to={"/"+data.getMenuItems[i].slug}
                  activeClassName='NavBar-Item-Active'>
 
 
@@ -72,6 +72,18 @@ const App = () => {
     return array
   }
 
+  const TestOne = () => {
+    return <p>TestOne</p>
+  }
+
+  const TestTwo = () => {
+    return <p>TestTwo</p>
+  }
+
+  const TestThree = () => {
+    return <p>TestThree</p>
+  }
+
   return (
     <ApolloProvider client={client}>
       <Router>
@@ -88,7 +100,12 @@ const App = () => {
 
           <div className='SideBar-Main'>
             <div className="SideBar-Items">
-
+              <p>Sidebar test</p>
+              <Switch>
+                <Route path="/:category" exact component={TestOne} />
+                <Route path="/:category/:subcategory" exact component={TestTwo} />
+                <Route path="/:category/:subcategory/:document" exact component={TestThree} />
+              </Switch>
             </div>
             <div className='SideBar-Disclaimer'>
               Hextech Docs was created under Riot Games' "Legal Jibber Jabber" policy using assets owned by Riot Games.
