@@ -127,17 +127,29 @@ const App = () => {
             <GetCategories/>
           </div>
 
-          <div className='SideBar-Main'>
-            <div className="SideBar-Items">
-              <Switch>
-                <Route path="/:category" exact component={TestOne} />
-                <Route path="/:category/:subcategory" exact component={TestTwo} />
-                <Route path="/:category/:subcategory/:document" exact component={TestThree} />
-              </Switch>
+          <div className='Container'>
+            <div className='SideBar-Main'>
+              <div className="SideBar-Items">
+                <Switch>
+                  <Route path="/:category" exact component={TestOne} />
+                  <Route path="/:category/:subcategory" exact component={TestTwo} />
+                  <Route path="/:category/:subcategory/:document" exact component={TestThree} />
+                </Switch>
+              </div>
+              <div className='SideBar-Disclaimer'>
+                Hextech Docs was created under Riot Games' "Legal Jibber Jabber" policy using assets owned by Riot Games.
+                Riot Games does not endorse or sponsor this project.
+              </div>
             </div>
-            <div className='SideBar-Disclaimer'>
-              Hextech Docs was created under Riot Games' "Legal Jibber Jabber" policy using assets owned by Riot Games.
-              Riot Games does not endorse or sponsor this project.
+
+            <div className='Content'>
+
+              <div className="More-Info">
+                <div className="Bread-Crumbs">
+                  <a href="/">LoL</a>  <strong>></strong>  <a href="/">Riot Games API</a>
+                </div>
+              </div>
+
             </div>
           </div>
 
