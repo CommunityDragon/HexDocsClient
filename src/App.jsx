@@ -2,9 +2,10 @@ import React from 'react'
 import ApolloClient from 'apollo-boost'
 import { InMemoryCache } from 'apollo-cache-inmemory'
 import { ApolloProvider } from '@apollo/react-hooks'
-import { BrowserRouter as Router } from 'react-router-dom'
+import { BrowserRouter as Router, Route } from 'react-router-dom'
 
 import { Navbar, Sidebar } from 'features/layout'
+import HomePage from './pages/home'
 import './styles/App.sass'
 
 const client = new ApolloClient({
@@ -28,6 +29,7 @@ const App = () => (
                 <a href="/">LoL</a>  <strong>></strong>  <a href="/">Riot Games API</a>
               </div>
             </div>
+            <Route exact path="/" component={HomePage} />
           </div>
         </div>
       </div>

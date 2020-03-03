@@ -7,6 +7,7 @@
     "apollo-boost": "^0.4.7",
     "apollo-cache-inmemory": "^1.6.5",
     "css-reset-and-normalize": "^2.1.0",
+    "github-markdown-css": "^4.0.0",
     "graphql": "^14.6.0",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
@@ -16,7 +17,10 @@
     "styled-components": "^5.0.1"
   },
   "scripts": {
+    "readme": "markdown -f gfm README.md > public/static/readme.html",
+    "prestart": "yarn readme",
     "start": "react-scripts start",
+    "prebuild": "yarn readme",
     "build": "react-scripts build",
     "eject": "react-scripts eject"
   },
@@ -36,6 +40,7 @@
     ]
   },
   "devDependencies": {
+    "markdown-to-html": "^0.0.13",
     "node-sass": "^4.13.1"
   }
 }
