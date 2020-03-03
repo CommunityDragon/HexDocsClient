@@ -1,7 +1,7 @@
 import { gql } from 'apollo-boost'
 
 /**
- * fetches category data for the navbar
+ * fetches category data for the sidebar
  */
 export const GET_CATEGORIES = gql`
   query Categories {

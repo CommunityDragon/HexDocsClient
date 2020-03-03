@@ -12,6 +12,9 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 })
 
+/**
+ * main application
+ */
 const App = () => (
   <ApolloProvider client={client}>
     <Router>
