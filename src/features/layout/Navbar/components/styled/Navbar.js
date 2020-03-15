@@ -44,33 +44,46 @@ const Navbar = styled.nav`
 
       .navbar__item-label {
         display: flex;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
       }
     }
 
     .navbar__item-icon {
-      height: 90%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 80%;
       width: auto;
     }
 
     .navbar__item-img {
       height: 100%;
       width: auto;
+      
+      display: flex;
+      
+      align-items: center;
+      justify-content: center;
+      align-content: center;
     }
 
     .navbar__item-label {
-      padding: 0 0.5vw;
+      padding: 0 5%;
+      font-size: 0.8rem;
       display: none;
     }
 
     .navbar__item-content {
       color: whitesmoke;
-      white-space: pre-wrap;
-      font-size: 1em;
+      white-space: nowrap;
+      font-size: 0.8rem;
       height: 100%;
-      display: inline-flex;
+      display: flex;
       width: auto;
-      align-items: center;
-      padding-bottom: 1vh;
+      position: relative;
+      top: 30%;
     }
   }
 
