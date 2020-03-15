@@ -20,11 +20,11 @@ const Navbar = styled.nav`
   .navbar__item {
     overflow: hidden;
     height: 100%;
-    display: inline-flex;
+    display: flex;
     justify-content: center;
     align-content: center;
     transition-duration: 300ms;
-    padding: 0.5vh 1vw;
+    padding: 0 1%;
     cursor: pointer;
 
     &:hover {
@@ -48,18 +48,19 @@ const Navbar = styled.nav`
         align-content: center;
         align-items: center;
       }
+     
     }
 
     .navbar__item-icon {
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 80%;
+      height: 100%;
       width: auto;
     }
 
     .navbar__item-img {
-      height: 100%;
+      height: 70%;
       width: auto;
       
       display: flex;
@@ -73,6 +74,7 @@ const Navbar = styled.nav`
       padding: 0 5%;
       font-size: 0.8rem;
       display: none;
+      height: 100%;
     }
 
     .navbar__item-content {
@@ -80,10 +82,12 @@ const Navbar = styled.nav`
       white-space: nowrap;
       font-size: 0.8rem;
       height: 100%;
-      display: flex;
       width: auto;
-      position: relative;
-      top: 30%;
+      
+      display: flex;
+      justify-items: center;
+      align-items: center;
+      padding-bottom: 5%;
     }
   }
 
