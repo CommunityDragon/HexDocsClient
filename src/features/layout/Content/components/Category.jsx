@@ -31,10 +31,10 @@ const Category = ({ match }) => {
   }
 
   function FetchData (props) {
-    const { data, loading, error } = useAxios(props.url)
+    const [{ data, loading, error }] = useAxios(props.url)
 
     if (loading) return <Loading/>
-    if (error) return (<p>Error!: {error.message} {JSON.stringify(props.url)}</p>)
+    if (error) return (<p>Error!</p>)
 
     return (
       <RenderMD md={data}/>
