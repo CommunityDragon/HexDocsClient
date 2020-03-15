@@ -12,7 +12,7 @@ const PepegaDynamic = props => {
   const { data } = useQuery(GET_CATEGORIES)
   const items = data ? data.getMenuItems : []
 
-  if (!subcategory) return <span>FAIL</span>
+  if (!subcategory) return <span></span>
   return (
     <>
       {items.flatMap(({ slug, subcategories }) => slug === subcategory ? subcategories.map(sub => (
