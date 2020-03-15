@@ -26,30 +26,34 @@ const Container = ({ match }) => {
     if (loading) return <Loading/>
     if (error) return <p>Error :(</p>
 
-    const document = data.getDocumentBySlug
+    try {
+      const document = data.getDocumentBySlug
 
-    return (
-      <div>
+      return (
         <div>
-          {document.authors.length > 0 &&
-          <h2 className='doc-author'>
-            Created by: {
-            document.authors.map(val =>
-              <div><a href={'https://github.com/' + val.github}>{val.name}</a><br/></div>
-            )}
-          </h2>
-          }
-          <div className='doc-meta'>
-            <div>Created: {moment(document.createdAt).fromNow()}</div>
-            {document.createdAt !== document.updatedAt &&
-            <div>Last updated: {moment(document.updatedAt).fromNow()}</div>}
+          <div>
+            {document.authors.length > 0 &&
+            <h2 className='doc-author'>
+              Created by: {
+              document.authors.map(val =>
+                <div><a href={'https://github.com/' + val.github}>{val.name}</a><br/></div>
+              )}
+            </h2>
+            }
+            <div className='doc-meta'>
+              <div>Created: {moment(document.createdAt).fromNow()}</div>
+              {document.createdAt !== document.updatedAt &&
+              <div>Last updated: {moment(document.updatedAt).fromNow()}</div>}
+            </div>
+            <hr/>
+            <RenderMD md={document.content}/>
+            <hr/>
           </div>
-          <hr/>
-          <RenderMD md={document.content}/>
-          <hr/>
         </div>
-      </div>
-    )
+      )
+    } catch (e) {
+      return <p>Error :(</p>
+    }
   }
 
   return (
