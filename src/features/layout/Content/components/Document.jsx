@@ -8,6 +8,7 @@ import { GET_DOCUMENT } from '../graphql/queries'
 
 import RenderMD from 'features/layout/Content/components/RenderMD'
 import Loading from 'features/layout/Loading'
+import Error from 'features/layout/Error'
 
 /**
  * specific documents
@@ -24,7 +25,7 @@ const Container = ({ match }) => {
     })
 
     if (loading) return <Loading/>
-    if (error) return <p>Error :(</p>
+    if (error) return <Error/>
 
     try {
       const document = data.getDocumentBySlug
@@ -52,7 +53,7 @@ const Container = ({ match }) => {
         </div>
       )
     } catch (e) {
-      return <p>Error :(</p>
+      return <Error message={'An unexpected error has occurred.'}/>
     }
   }
 

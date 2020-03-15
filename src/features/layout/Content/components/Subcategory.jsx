@@ -3,6 +3,7 @@ import { useQuery } from '@apollo/react-hooks'
 import { NavLink } from 'react-router-dom'
 
 import Loading from 'features/layout/Loading'
+import Error from 'features/layout/Error'
 
 import { SubCategories } from './styled'
 import { GET_CATEGORIES, GET_SUBCATECORIES } from '../graphql/queries'
@@ -16,7 +17,7 @@ const Container = ({ match }) => {
     const { loading, error, data } = useQuery(GET_CATEGORIES)
     try {
       if (loading) return <Loading/>
-      if (error) return <p>Error :(</p>
+      if (error) return <Error/>
 
       const CURRENT_CATEGORY = match.params.category
       const CURRENT_SUBCATEGORY = match.params.subcategory
@@ -26,7 +27,7 @@ const Container = ({ match }) => {
 
       return <GetDocumentList id={SELECTED_SUBCATEGORY[0].id} cat={CURRENT_CATEGORY} subcat={SELECTED_SUBCATEGORY[0]}/>
     } catch (e) {
-      return <p>Error :(</p>
+      return <Error/>
     }
   }
 
@@ -38,7 +39,7 @@ const Container = ({ match }) => {
     })
 
     if (loading) return <Loading/>
-    if (error) return <p>Error :(</p>
+    if (error) return <Error message={'An unexpected error has occurred.'}/>
 
     return (
       <div className='docs'>
