@@ -20,9 +20,9 @@ const Container = () => {
     <content>
       <Switch>
         <Route path='/legal' exact component={pepegastatic}/>
-        <Route path="/:category" component={Category}/>
-        <Route path="/:category/:subcategory" component={Subcategory}/>
-        <Route path="/:category/:subcategory/:document" component={Document}/>
+        <Route path="/:category" exact component={Category}/>
+        <Route path="/:category/:subcategory" exact component={Subcategory}/>
+        <Route path="/:category/:subcategory/:document" exact component={Document}/>
         <Route path="*" component={Error}/>
       </Switch>
     </content>
