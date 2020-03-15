@@ -16,7 +16,8 @@ const PepegaDynamic = props => {
   return (
     <>
       {items.flatMap(({ slug, subcategories }) => slug === subcategory ? subcategories.map(sub => (
-        <NavLink key={sub.id} to={`${subcategory}/${sub.slug}`} className='sidebar__item'>
+        <NavLink key={sub.id} id={sub.id} to={`/${subcategory}/${sub.slug}`} className='sidebar__item'
+                 activeClassName='sidebar__item_active'>
           {sub.name}
         </NavLink>
       )) : [])}
