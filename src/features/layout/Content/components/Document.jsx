@@ -37,7 +37,8 @@ const Container = ({ match }) => {
             <h2 className='doc-author'>
               Created by: {
               document.authors.map(val =>
-                <div><a href={'https://github.com/' + val.github}>{val.name}</a><br/></div>
+                <div><a href={'https://github.com/' + val.github}>{val.name == null ? val.name : val.github}</a><br/>
+                </div>
               )}
             </h2>
             }
@@ -48,7 +49,6 @@ const Container = ({ match }) => {
             </div>
             <hr/>
             <RenderMD md={document.content}/>
-            <hr/>
           </div>
         </div>
       )
