@@ -15,7 +15,7 @@ Want to contribute to the docs you can do that [here]()
 Thank you to these wonderful people for their contributions to the docs:
     
 - [Community Dragon](https://communitydragon.org) - Assets and support
-- [Riot Games' API Dev Community](https://discord.gg/riotapi) - Support
+- [Riot Games' API Dev Community](https://discord.gg/riotgamesdevrel) - Support
 
 ## Issues
 If you believe there are any issues withe the documentation please open an issue
