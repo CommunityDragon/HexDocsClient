@@ -3,8 +3,8 @@ import React from 'react'
 /**
  * pepega static
  */
-const PepegaStatic = props => (
-  <p>Test TWO {JSON.stringify(props)}</p>
+const PepegaStatic = _ => (
+  <p>Test TWO</p>
 )
 
 export default PepegaStatic
