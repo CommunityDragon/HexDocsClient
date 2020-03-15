@@ -14,17 +14,20 @@ const Container = ({ match }) => {
 
   function GetCurrentSubCategoryId () {
     const { loading, error, data } = useQuery(GET_CATEGORIES)
+    try {
+      if (loading) return <Loading/>
+      if (error) return <p>Error :(</p>
 
-    if (loading) return <Loading/>
-    if (error) return <p>Error :(</p>
+      const CURRENT_CATEGORY = match.params.category
+      const CURRENT_SUBCATEGORY = match.params.subcategory
 
-    const CURRENT_CATEGORY = match.params.category
-    const CURRENT_SUBCATEGORY = match.params.subcategory
+      const SELECTED_CATEGORY = data.getMenuItems.filter(item => item.slug === CURRENT_CATEGORY)
+      const SELECTED_SUBCATEGORY = SELECTED_CATEGORY[0].subcategories.filter(item => item.slug === CURRENT_SUBCATEGORY)
 
-    const SELECTED_CATEGORY = data.getMenuItems.filter(item => item.slug === CURRENT_CATEGORY)
-    const SELECTED_SUBCATEGORY = SELECTED_CATEGORY[0].subcategories.filter(item => item.slug === CURRENT_SUBCATEGORY)
-
-    return <GetDocumentList id={SELECTED_SUBCATEGORY[0].id} cat={CURRENT_CATEGORY} subcat={SELECTED_SUBCATEGORY[0]}/>
+      return <GetDocumentList id={SELECTED_SUBCATEGORY[0].id} cat={CURRENT_CATEGORY} subcat={SELECTED_SUBCATEGORY[0]}/>
+    } catch (e) {
+      return <p>Error :(</p>
+    }
   }
 
   function GetDocumentList ({ id, subcat }) {

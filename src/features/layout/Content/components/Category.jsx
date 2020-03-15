@@ -22,12 +22,16 @@ const Category = ({ match }) => {
 
     if (loading) return <Loading/>
     if (error) return <p>Error :(</p>
+    try {
+      const CURRENT_CATEGORY = match.params.category
+      const SELECTED_CATEGORY = data.getMenuItems.filter(item => item.slug === CURRENT_CATEGORY)
 
-    const CURRENT_CATEGORY = match.params.category
-    const SELECTED_CATEGORY = data.getMenuItems.filter(item => item.slug === CURRENT_CATEGORY)
-    const README_URL = SELECTED_CATEGORY[0].readmeUrl
+      const README_URL = SELECTED_CATEGORY[0].readmeUrl
 
-    return <FetchData url={README_URL}/>
+      return <FetchData url={README_URL}/>
+    } catch (e) {
+      return <p>Error :(</p>
+    }
   }
 
   function FetchData (props) {
