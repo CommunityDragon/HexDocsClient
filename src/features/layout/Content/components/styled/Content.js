@@ -16,7 +16,7 @@ const SubCategories = styled.div`
   }
   
   .docs {
-  line-height: 150%;
+    line-height: 150%;
     display: flex;
     flex-direction: column;
   }
