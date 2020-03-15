@@ -11,6 +11,7 @@ import { content } from './styled'
 import { GET_CATEGORIES } from '../graphql/queries'
 
 import Loading from 'features/layout/Loading'
+import Error from 'features/layout/Error'
 
 /**
  * Display basics of a specific game
@@ -21,7 +22,7 @@ const Category = ({ match }) => {
     const { loading, error, data } = useQuery(GET_CATEGORIES)
 
     if (loading) return <Loading/>
-    if (error) return <p>Error :(</p>
+    if (error) return <Error/>
     try {
       const CURRENT_CATEGORY = match.params.category
       const SELECTED_CATEGORY = data.getMenuItems.filter(item => item.slug === CURRENT_CATEGORY)
@@ -30,7 +31,7 @@ const Category = ({ match }) => {
 
       return <FetchData url={README_URL}/>
     } catch (e) {
-      return <p>Error :(</p>
+      return <Error/>
     }
   }
 
@@ -38,7 +39,7 @@ const Category = ({ match }) => {
     const [{ data, loading, error }] = useAxios(props.url)
 
     if (loading) return <Loading/>
-    if (error) return (<p>Error!</p>)
+    if (error) return <Error/>
 
     return (
       <RenderMD md={data}/>
