@@ -2,9 +2,10 @@ import React from 'react'
 import ApolloClient from 'apollo-boost'
 import { InMemoryCache } from 'apollo-cache-inmemory'
 import { ApolloProvider } from '@apollo/react-hooks'
-import { BrowserRouter as Router, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
 import { Navbar, Sidebar } from 'features/layout'
+import Content from 'features/layout/Content'
 import HomePage from './pages/home'
 import './styles/App.sass'
 
@@ -22,14 +23,12 @@ const App = () => (
       <div className="App">
         <Navbar />
         <div className='Container'>
-          <Sidebar />
+          <Sidebar/>
           <div className='Content'>
-            <div className="More-Info">
-              <div className="Bread-Crumbs">
-                <a href="/">LoL</a>  <strong>></strong>  <a href="/">Riot Games API</a>
-              </div>
-            </div>
-            <Route exact path="/" component={HomePage} />
+            <Switch>
+              <Route path='/:category' component={Content}/>
+              <Route exact path="/" component={HomePage}/>
+            </Switch>
           </div>
         </div>
       </div>
