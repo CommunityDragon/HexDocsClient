@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 const RenderMD = styled.div`
-    padding: 1vh 0 2vh 0;
+    padding: 1% 0 5% 0;
     .categories {
       .markdown-body {
         box-sizing: border-box;
