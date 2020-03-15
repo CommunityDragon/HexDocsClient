@@ -1,7 +1,6 @@
 import React from 'react'
-import { Switch, Route } from 'react-router-dom'
+import { Switch, Route, NavLink } from 'react-router-dom'
 
-import PepegaStatic from './PepegaStatic'
 import PepegaDynamic from './PepegaDynamic'
 import { Sidebar } from './styled'
 
@@ -12,12 +11,18 @@ const Container = () => (
   <Sidebar>
     <div className="sidebar__item-list">
       <Switch>
-        <Route path="/:category" exact component={PepegaDynamic} />
-        <Route path="/:category/:subcategory" exact component={PepegaStatic} />
-        <Route path="/:category/:subcategory/:document" exact component={PepegaStatic} />
+        <Route path='/legal' exact/>
+        <Route path="/:category" component={PepegaDynamic}/>
+        <Route path="/:category/:subcategory" component={PepegaDynamic}/>
+        <Route path="/:category/:subcategory/:document" component={PepegaDynamic}/>
       </Switch>
     </div>
     <div className='sidebar__disclaimer'>
+      <div className='sidebar__disclaimer__link'>
+        <NavLink to='/legal'>Legal</NavLink>
+        <a href="https://celerity.gg/">Celerity</a>
+        <a href="https://communitydragon.org/">CDragon</a>
+      </div>
       Hextech Docs was created under Riot Games' "Legal Jibber Jabber" policy using assets owned by Riot Games.
       Riot Games does not endorse or sponsor this project.
     </div>
