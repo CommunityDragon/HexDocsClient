@@ -1,22 +1,7 @@
-type Query {
-    getMenuItems: [Category!]
-    getDocumentDetails(id: ID!): Document
-    getDocumentBySlug(slug: String!): Document
-    getDocumentsForSubcategory(subcategoryId: ID!): [Document!]
-}
+# This file was generated based on ".graphqlconfig". Do not edit manually.
 
-type Category {
-    id: ID!
-    name: String!
-    slug: String!
-    iconUrl: String
-    subcategories: [Subcategory!]
-}
-
-type Subcategory {
-    id: ID!
-    name: String!
-    slug: String!
+schema {
+    query: Query
 }
 
 type Author {
@@ -24,15 +9,37 @@ type Author {
     name: String
 }
 
+type Category {
+    iconUrl: String!
+    id: ID!
+    name: String!
+    readmeUrl: String!
+    slug: String!
+    subcategories: [Subcategory!]
+}
+
 type Document {
+    authors: [Author!]
+    category: Category!
+    content: String
+    createdAt: String!
     id: ID!
     slug: String!
-    category: Category!
     subcategory: Subcategory!
-    title: String!
-    authors: [Author!]
-    content: String
     tags: [String!]
-    createdAt: String!
+    title: String!
     updatedAt: String!
+}
+
+type Query {
+    getDocumentBySlug(slug: String!): Document
+    getDocumentDetails(id: ID!): Document
+    getDocumentsForSubcategory(subcategoryId: ID!): [Document!]
+    getMenuItems: [Category!]
+}
+
+type Subcategory {
+    id: ID!
+    name: String!
+    slug: String!
 }
