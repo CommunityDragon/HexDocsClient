@@ -2,9 +2,6 @@ import React from 'react'
 import { useQuery } from '@apollo/react-hooks'
 import useAxios from 'axios-hooks'
 
-import 'highlight.js/styles/github-gist.css'
-import 'github-markdown-css'
-
 import RenderMD from 'features/layout/Content/components/RenderMD'
 
 import { content } from './styled'
@@ -18,25 +15,24 @@ import Error from 'features/layout/Error'
  */
 const Category = ({ match }) => {
 
-  function GetReadmeUrl () {
+  const GetReadmeUrl = () => {
     const { loading, error, data } = useQuery(GET_CATEGORIES)
 
     if (loading) return <Loading/>
     if (error) return <Error/>
-    try {
-      const CURRENT_CATEGORY = match.params.category
-      const SELECTED_CATEGORY = data.getMenuItems.filter(item => item.slug === CURRENT_CATEGORY)
 
-      const README_URL = SELECTED_CATEGORY[0].readmeUrl
+    const CURRENT_CATEGORY = match.params.category
+    const SELECTED_CATEGORY = data.getMenuItems.filter(item => item.slug === CURRENT_CATEGORY)
 
-      return <FetchData url={README_URL}/>
-    } catch (e) {
+    if (SELECTED_CATEGORY.length === 0) {
       return <Error/>
+    } else {
+      return <FetchData url={SELECTED_CATEGORY[0].readmeUrl}/>
     }
   }
 
-  function FetchData (props) {
-    const [{ data, loading, error }] = useAxios(props.url)
+  const FetchData = ({ url }) => {
+    const [{ data, loading, error }] = useAxios(url)
 
     if (loading) return <Loading/>
     if (error) return <Error/>
