@@ -8,14 +8,14 @@ const error = styled.div`
   justify-content: center;
   align-items: center;
   
-  .error-img {
+  .error__image {
     width: 15%;
     height: auto;
     
     margin-bottom: 5vh;
   }
   
-  .error-message {
+  .error__message {
     color: rgba(0,0,0,0.75);
   }
 `
