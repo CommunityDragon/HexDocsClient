@@ -15,7 +15,6 @@ import pepegastatic from 'features/layout/Sidebar/components/PepegaStatic'
  * main content of the application
  */
 const Container = () => {
-
   return (
     <content>
       <Switch>
