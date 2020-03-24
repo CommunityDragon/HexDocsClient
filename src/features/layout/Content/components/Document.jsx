@@ -15,7 +15,7 @@ import Error from 'features/layout/Error'
  */
 const Container = ({ match }) => {
 
-  function GetDocument () {
+  const GetDocument = () => {
     const CURRENT_DOCUMENT_SLUG = match.params.document
 
     const { loading, error, data } = useQuery(GET_DOCUMENT, {
@@ -27,20 +27,20 @@ const Container = ({ match }) => {
     if (loading) return <Loading/>
     if (error) return <Error/>
 
-    try {
       const document = data.getDocumentBySlug
 
+    if (document) {
       return (
         <div>
           <div>
-            {document.authors.length > 0 &&
-            <h2 className='doc-author'>
-              Created by: {
-              document.authors.map(val =>
-                <div><a href={'https://github.com/' + val.github}>{val.name == null ? val.name : val.github}</a><br/>
-                </div>
-              )}
-            </h2>
+            {document.authors.length > 0 ?
+              <h2 className='doc-author'>
+                Created by: {
+                document.authors.map(val =>
+                  <div><a href={'https://github.com/' + val.github}>{val.name == null ? val.name : val.github}</a><br/>
+                  </div>
+                )}
+              </h2> : null
             }
             <div className='doc-meta'>
               <div>Created: {moment(document.createdAt).fromNow()}</div>
@@ -52,8 +52,8 @@ const Container = ({ match }) => {
           </div>
         </div>
       )
-    } catch (e) {
-      return <Error message={'An unexpected error has occurred.'}/>
+    } else {
+      return <Error/>
     }
   }
 
