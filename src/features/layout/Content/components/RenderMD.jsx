@@ -10,7 +10,7 @@ const MarkdownParser = new MarkdownIt('default', {
   linkify: true,
   breaks: false,
   typographer: true,
-  highlight: function (str, lang) {
+  highlight (str, lang) {
     if (lang && hljs.getLanguage(lang)) {
       try {
         return hljs.highlight(lang, str).value
@@ -19,8 +19,7 @@ const MarkdownParser = new MarkdownIt('default', {
 
     return ''
   }
-})
-  .use(require('markdown-it-footnote'))
+}).use(require('markdown-it-footnote'))
   .use(require('markdown-it-sup'))
   .use(require('markdown-it-sub'))
   .use(require('markdown-it-ins'))
@@ -39,10 +38,10 @@ const MarkdownParser = new MarkdownIt('default', {
       return params.trim().match(/^spoiler\s+(.*)$/)
     },
 
-    render: (tokens, idx) => {
-      const m = tokens[idx].info.trim().match(/^spoiler\s+(.*)$/)
+    render (tokens, i) {
+      const m = tokens[i].info.trim().match(/^spoiler\s+(.*)$/)
 
-      if (tokens[idx].nesting === 1) {
+      if (tokens[i].nesting === 1) {
         return '<details><summary>' + MarkdownParser.utils.escapeHtml(m[1]) + '</summary> \n'
       } else {
         return '</details>\n'
