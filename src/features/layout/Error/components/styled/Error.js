@@ -9,7 +9,7 @@ const error = styled.div`
   align-items: center;
   
   .error__image {
-    width: 15%;
+    width: 10rem;
     height: auto;
     
     margin-bottom: 5vh;
