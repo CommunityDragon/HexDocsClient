@@ -24,6 +24,7 @@ type Document {
     content: String
     createdAt: String!
     id: ID!
+    markers: [Marker!]
     slug: String!
     subcategory: Subcategory!
     tags: [String!]
@@ -31,11 +32,18 @@ type Document {
     updatedAt: String!
 }
 
+type Marker {
+    displayName: String!
+    id: ID!
+}
+
 type Query {
     getDocumentBySlug(slug: String!): Document
     getDocumentDetails(id: ID!): Document
     getDocumentsForSubcategory(subcategoryId: ID!): [Document!]
+    getMarkersForSubcategory(subcategoryId: ID!): [Marker!]
     getMenuItems: [Category!]
+    narrowSubcategory(markerId: ID!, subcategoryId: ID!): [Document!]
 }
 
 type Subcategory {
