@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { memo } from 'react'
 import Img from 'react-image-fallback'
 import { NavLink } from 'react-router-dom'
 import { useQuery } from '@apollo/react-hooks'
@@ -6,7 +6,7 @@ import { useQuery } from '@apollo/react-hooks'
 import Logo from '../assets/logo.webp'
 
 import { Navbar } from './styled'
-import { GET_CATEGORIES } from '../graphql/queries'
+import { GET_MENU_ITEMS } from '../graphql/queries'
 
 const placeholderImage = 'http://raw.communitydragon.org/latest/plugins/rcp-fe-lol-clash/global/default/assets/placeholder/hub-coming-soon.png'
 
@@ -14,13 +14,13 @@ const placeholderImage = 'http://raw.communitydragon.org/latest/plugins/rcp-fe-l
  * main navbar of the application
  */
 const Container = () => {
-  const { data } = useQuery(GET_CATEGORIES)
-  
+  const { data } = useQuery(GET_MENU_ITEMS)
+
   return (
     <Navbar>
       <div className="navbar__logo">
-        <NavLink 
-          to='/' 
+        <NavLink
+          to='/'
           activeClassName='navbar__item--active'
         >
           <img src={Logo} className="navbar__logo-img" alt=""/>
@@ -53,4 +53,4 @@ const Container = () => {
   )
 }
 
-export default Container
+export default memo(Container)
