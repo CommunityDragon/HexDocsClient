@@ -1,15 +1,13 @@
 import React from 'react'
 import { Switch, Route } from 'react-router-dom'
 
-import { content } from './styled'
-
 import Category from './Category'
 import Subcategory from './Subcategory'
 import Document from './Document'
 
 import Error from 'features/layout/Error'
 
-import pepegastatic from 'features/layout/Sidebar/components/PepegaStatic'
+import pepegastatic from 'features/layout/Sidebar/components/SidebarStatic'
 
 /**
  * main content of the application
