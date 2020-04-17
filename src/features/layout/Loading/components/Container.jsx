@@ -2,7 +2,7 @@ import React from 'react'
 
 import Load from './styled'
 
-const LOADING_IMAGE = 'http://raw.communitydragon.org/latest/plugins/rcp-fe-lol-missions/global/default/missiontracker_poro.png'
+import Poro_Scroll from '../assets/poro_scroll.png'
 
 /**
  * Displayed when loading.
@@ -11,7 +11,7 @@ const Container = () => {
 
   return (
     <Load>
-      <img src={LOADING_IMAGE} className='load-img' alt='Uh Oh!'/>
+      <img src={Poro_Scroll} className='load-img' alt='Uh Oh!'/>
     </Load>
   )
 }

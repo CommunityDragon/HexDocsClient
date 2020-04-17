@@ -1,3 +1,10 @@
+/**
+ * This file is only here for reference and
+ * will be removed at a later date
+ *
+ * @deprecated
+ */
+
 import { gql } from 'apollo-boost'
 
 /**
@@ -7,10 +14,8 @@ export const GET_CATEGORIES = gql`
     query GET_CATEGORIES {
         getMenuItems {
             name
-            id
-            iconUrl
-            readmeUrl
             slug
+            readmeUrl
             subcategories {
                 name
                 id
@@ -20,12 +25,16 @@ export const GET_CATEGORIES = gql`
     }
 `
 
-export const GET_SUBCATECORIES = gql`
-    query GET_SUBCATECORIES($ID: ID!) {
+export const GET_SUBCATEGORIES = gql`
+    query GET_SUBCATEGORIES($ID: ID!) {
         getDocumentsForSubcategory(subcategoryId: $ID) {
             title
             id
             slug
+            markers {
+                displayName
+                id
+            }
             tags
             createdAt
             authors {
@@ -33,6 +42,29 @@ export const GET_SUBCATECORIES = gql`
                 name
             }
             content
+        }
+    }
+`
+
+export const GET_MARKERS = gql`
+    query GET_MARKERS($ID: ID!) {
+        getMarkersForSubcategory(subcategoryId: $ID) {
+            id
+            displayName
+        }
+    }
+`
+
+export const GET_SUBCATEGORIESONLY = gql`
+    query GET_SUBCATECORIES($ID: ID!) {
+        getDocumentsForSubcategory(subcategoryId: $ID) {
+            title
+            id
+            slug
+            markers {
+                displayName
+                id
+            }
         }
     }
 `

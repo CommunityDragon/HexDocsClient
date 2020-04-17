@@ -4,7 +4,7 @@ import moment from 'moment'
 import { useQuery } from '@apollo/react-hooks'
 
 import { Docs } from './styled'
-import { GET_DOCUMENT } from '../graphql/queries'
+import { GET_DOCUMENT } from '../graphql/DocumentQueries'
 
 import RenderMD from 'features/layout/Content/components/RenderMD'
 import Loading from 'features/layout/Loading'
@@ -27,7 +27,7 @@ const Container = ({ match }) => {
     if (loading) return <Loading/>
     if (error) return <Error/>
 
-      const document = data.getDocumentBySlug
+    const document = data.getDocumentBySlug
 
     if (document) {
       return (

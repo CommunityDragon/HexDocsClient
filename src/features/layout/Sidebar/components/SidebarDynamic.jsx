@@ -5,9 +5,9 @@ import { NavLink } from 'react-router-dom'
 import { GET_CATEGORIES } from '../graphql/queries'
 
 /**
- * pepega dynamic
+ * Sidebar dynamic
  */
-const PepegaDynamic = props => {
+const SidebarDynamic = props => {
   const subcategory = props.match.params.category
   const { data } = useQuery(GET_CATEGORIES)
   const items = data ? data.getMenuItems : []
@@ -25,4 +25,4 @@ const PepegaDynamic = props => {
   )
 }
 
-export default PepegaDynamic
+export default SidebarDynamic

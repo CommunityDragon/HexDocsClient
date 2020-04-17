@@ -2,7 +2,7 @@ import React from 'react'
 import moment from 'moment'
 
 import { useQuery } from '@apollo/react-hooks'
-import { GET_DOCUMENT } from '../graphql/queries'
+import { GET_DOCUMENT } from '../graphql/DocumentQueries'
 
 import RenderMD from 'features/layout/Content/components/RenderMD'
 import Loading from 'features/layout/Loading'

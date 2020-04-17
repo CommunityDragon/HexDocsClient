@@ -6,9 +6,6 @@ import { gql } from 'apollo-boost'
 export const GET_CATEGORIES = gql`
   query Categories {
     getMenuItems {
-      name
-      id
-      iconUrl
       slug
       subcategories {
         name

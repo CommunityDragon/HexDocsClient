@@ -10,7 +10,7 @@ const SubCategories = styled.div`
     cursor: pointer;
     &:hover {
       transition-duration: 350ms;
-      filter: invert(50%);
+      filter: invert(35%);
     }
   }
   
@@ -18,6 +18,34 @@ const SubCategories = styled.div`
     line-height: 150%;
     display: flex;
     flex-direction: column;
+  }
+  
+  .subcat__marked-h1 {
+    font-size: larger;
+    font-weight: bolder;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .subcat__marked-content {
+    display: flex;
+    flex-direction: column;
+    padding: 0.75rem 0 0 1rem;
+    
+    a {
+      line-height: 1.5rem
+    }
+  }
+  
+  .subcat__marked-container {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem 0;
+    
+    &:first-child {
+      margin: 0 0;
+      padding: 0 0;
+    }
   }
 `
 
