@@ -3,8 +3,8 @@ import React from 'react'
 /**
  * pepega static
  */
-const PepegaStatic = () => (
+const SidebarStatic = () => (
   <p>Test TWO</p>
 )
 
-export default PepegaStatic
+export default SidebarStatic
