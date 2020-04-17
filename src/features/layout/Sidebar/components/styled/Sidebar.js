@@ -38,7 +38,9 @@ const Sidebar = styled.div`
     
     transition-duration: 350ms;
     
-    padding-left: 5%
+    padding-left: 5%;
+    
+    cursor: default;
   }
 
   .sidebar__disclaimer {
