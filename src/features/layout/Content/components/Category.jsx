@@ -4,8 +4,7 @@ import useAxios from 'axios-hooks'
 
 import RenderMD from 'features/layout/Content/components/RenderMD'
 
-import { content } from './styled'
-import { GET_CATEGORIES } from '../graphql/queries'
+import { GET_CATEGORIES } from '../graphql/CategoryQueries'
 
 import Loading from 'features/layout/Loading'
 import Error from 'features/layout/Error'
