@@ -4,8 +4,6 @@ import styled from 'styled-components'
  * styling for the navbar container
  */
 const Navbar = styled.nav`
-  @import url('https://fonts.googleapis.com/css?family=Cairo&display=swap');
-
   min-height: 55px;
   min-width: 160px;
   width: 100%;
