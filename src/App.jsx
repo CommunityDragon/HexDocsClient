@@ -43,7 +43,7 @@ const App = () => (
               }}
               cookieName="HextechDocsPoroSnax"
             >
-              This website uses <del>poro snacks</del> cookies to enhance the user experience. See our <a href="" className="Underline">Cookie <del>recipe</del> policy</a>
+              This website uses <del>poro snacks</del> cookies to enhance the user experience. See our <a href=""><u>Cookie <del>recipe</del> policy</u></a>
             </CookieConsent>
           </div>
         </div>
