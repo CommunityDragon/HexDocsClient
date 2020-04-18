@@ -1,4 +1,4 @@
-import React, { memo } from 'react'
+import React from 'react'
 import Img from 'react-image-fallback'
 import { NavLink } from 'react-router-dom'
 import { useQuery } from '@apollo/react-hooks'
@@ -53,4 +53,4 @@ const Container = () => {
   )
 }
 
-export default memo(Container)
+export default Container
