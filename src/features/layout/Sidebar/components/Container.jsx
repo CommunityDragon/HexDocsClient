@@ -1,4 +1,4 @@
-import React, { memo } from 'react'
+import React from 'react'
 import { Switch, Route, NavLink } from 'react-router-dom'
 
 import SidebarDynamic from 'features/layout/Sidebar/components/SidebarDynamic'
@@ -29,4 +29,4 @@ const Container = () => (
   </Sidebar>
 )
 
-export default memo(Container)
+export default Container
