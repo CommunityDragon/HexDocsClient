@@ -1,15 +1,16 @@
 import styled from 'styled-components'
 
 const Sidebar = styled.div`
-  min-width: 225px;
-  height: 100%;
-  width: 15%;
 
-  background: whitesmoke;
-  display: flex;
+    min-width: 225px;
+    height: 100%;
+    width: 15%;
   
-  flex-direction: column;
-  overflow: hidden;
+    background: whitesmoke;
+    display: flex;
+    
+    flex-direction: column;
+    overflow: hidden;
 
   .sidebar__item-list {
     display: flex;
