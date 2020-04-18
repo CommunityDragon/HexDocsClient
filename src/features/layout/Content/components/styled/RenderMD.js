@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 
 const RenderMD = styled.div`
+    width: 100%;
     padding: 1% 0 5% 0;
     .categories {
       .markdown-body {
