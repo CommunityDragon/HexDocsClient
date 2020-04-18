@@ -3,8 +3,9 @@ import styled from 'styled-components'
 const SubCategories = styled.div`
   font-size: 1rem;
   height: 100%;
-  max-width: 1000px;
+  width: 100%;
   font-family: 'Inter', sans-serif;
+  
   .link {
     transition-duration: 450ms;
     cursor: pointer;
