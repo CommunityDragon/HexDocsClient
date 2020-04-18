@@ -8,7 +8,7 @@ import Logo from '../assets/logo.webp'
 import { Navbar } from './styled'
 import { GET_MENU_ITEMS } from '../graphql/queries'
 
-const placeholderImage = 'http://raw.communitydragon.org/latest/plugins/rcp-fe-lol-clash/global/default/assets/placeholder/hub-coming-soon.png'
+import placeholderImage from '../assets/hub-coming-soon.png'
 
 /**
  * main navbar of the application

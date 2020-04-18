@@ -2,7 +2,7 @@ import React from 'react'
 
 import Err from './styled'
 
-const ERROR_IMAGE = 'http://raw.communitydragon.org/latest/plugins/rcp-fe-lol-career-stats/global/default/poro_question.png'
+import ERROR_IMAGE from './assets/poro_question.png'
 
 /**
  * Displays when an error has occured can have a custom message
