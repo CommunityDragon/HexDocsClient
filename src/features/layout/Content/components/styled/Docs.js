@@ -2,6 +2,7 @@ import styled from 'styled-components'
 
 const Docs = styled.div`
   height: 100%;
+  width: 100%;
   
   hr {
     border-top: 1px solid rgba(0,0,0,0.11);
