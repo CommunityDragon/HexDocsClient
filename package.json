@@ -3,18 +3,18 @@
   "version": "0.2.0",
   "private": true,
   "dependencies": {
-    "@apollo/react-hooks": "^3.1.3",
+    "@apollo/react-hooks": "^3.1.5",
     "apollo-boost": "^0.4.7",
     "apollo-cache-inmemory": "^1.6.5",
     "axios": "^0.19.2",
-    "axios-hooks": "^1.9.0",
+    "axios-hooks": "^1.10.0",
     "css-reset-and-normalize": "^2.1.0",
     "github-markdown-css": "^4.0.0",
-    "graphql": "^14.6.0",
-    "highlight.js": "^9.18.1",
+    "graphql": "^15.0.0",
+    "highlight.js": "^10.0.1",
     "markdown-it": "^10.0.0",
     "markdown-it-abbr": "^1.0.4",
-    "markdown-it-anchor": "^5.2.5",
+    "markdown-it-anchor": "^5.2.7",
     "markdown-it-container": "^2.0.0",
     "markdown-it-deflist": "^2.0.3",
     "markdown-it-emoji": "^1.4.0",
@@ -24,14 +24,14 @@
     "markdown-it-sub": "^1.0.0",
     "markdown-it-sup": "^1.0.0",
     "moment": "^2.24.0",
-    "react": "^16.13.0",
+    "react": "^16.13.1",
     "react-cookie-consent": "^3.0.0",
-    "react-dom": "^16.13.0",
+    "react-dom": "^16.13.1",
     "react-html-parser": "^2.0.2",
     "react-image-fallback": "^8.0.0",
     "react-router-dom": "^5.1.2",
-    "react-scripts": "3.4.0",
-    "styled-components": "^5.0.1",
+    "react-scripts": "3.4.1",
+    "styled-components": "^5.1.0",
     "uuid": "^7.0.3"
   },
   "scripts": {
@@ -58,8 +58,8 @@
     ]
   },
   "devDependencies": {
-    "@types/react-router-dom": "^5.1.4",
+    "@types/react-router-dom": "^5.1.5",
     "markdown-to-html": "^0.0.13",
-    "node-sass": "^4.13.1"
+    "node-sass": "^4.14.0"
   }
 }
