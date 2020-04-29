@@ -4,6 +4,7 @@ import ReactHtmlParser from 'react-html-parser'
 import hljs from 'highlight.js'
 
 import { rendermd as Rendermd } from './styled'
+import Disclaimer from '../../Disclaimer';
 
 const MarkdownParser = new MarkdownIt('default', {
   html: true,
@@ -58,6 +59,7 @@ const RenderMD = ({ md }) => {
       <div className="markdown-body">
         {ReactHtmlParser(MarkdownParser.render(md))}
       </div>
+      <Disclaimer displayOn={'MOBILE'}/>
     </Rendermd>
   )
 }
