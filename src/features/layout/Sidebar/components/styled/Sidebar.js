@@ -44,49 +44,22 @@ const Sidebar = styled.div`
     cursor: default;
   }
 
-  .sidebar__disclaimer {
-    pointer-events: none;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
+  @media (max-width: 767px) {
     width: 100%;
-
-    color: rgba(111, 111, 111, 0.47);
-    font-size: 0.5rem;
-
-    border-top: rgba(0, 0, 0, 0.15) 1px solid;
-    padding: 3% 2.5% 7.5%;
-    bottom: 0;
-  }
-  
-  .sidebar__disclaimer__link {
-    a {
-      &:hover {
-        color: rgba(111,111,111,1);
-        transition: 350ms;
-      }
+    height: 50px;
+    overflow-x: auto;
+    .sidebar__item-list {
+      padding: 0;
+      flex-direction: row;
     }
-    transition: 350ms;
-    color: rgba(111,111,111,0.76);
-    font-size: 0.55rem;
-    font-weight: normal;
-    text-align: center;
-    width: 100%;
-    padding-bottom: 2%;
-  }
-  
-   .sidebar__disclaimer__link > a {
-    pointer-events: all;
-    padding: 0 0;
-    &::after {
-      color: rgba(111,111,111,0.5);
-      content: ' ⦁ ';
-    }
-    
-    &:last-child {
-      &::after {
-        content: '';
-      }
+    .sidebar__item {
+      padding: 0;
+      display: flex;
+      border: none;
+      height: 100%;
+      min-width: 180px;
+      align-items: center;
+      justify-content: center;
     }
   }
 `

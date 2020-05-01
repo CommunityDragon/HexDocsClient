@@ -16,10 +16,9 @@
 .Content
   width: 100%
   height: 100%
-  padding: 1vh 2%
+  padding: 1vh 4%
   outline: rgba(20, 20, 20, 0.17) 1px solid
   overflow-y: auto
-  overflow-x: hidden
 
 
 .More-Info
@@ -42,3 +41,13 @@
     color: #333333
     font-size: 1.5rem
     cursor: default
+
+@media (max-width: 767px)
+  .Container
+    display: block
+    width: 100%
+    outline: none
+    overflow-y: auto
+
+    .Content
+      overflow-y: initial

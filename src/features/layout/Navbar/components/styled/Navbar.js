@@ -104,6 +104,17 @@ const Navbar = styled.nav`
       cursor: pointer;
     }
   }
+
+  @media (max-width: 767px) {
+    overflow-x: auto;
+    .navbar__item {
+      min-width: 60px;
+      
+      .navbar__item-content {
+        display: none;
+      }
+    }
+  }
 `
 
 export default Navbar
