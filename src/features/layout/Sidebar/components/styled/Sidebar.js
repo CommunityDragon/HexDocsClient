@@ -1,21 +1,20 @@
 import styled from 'styled-components'
 
 const Sidebar = styled.div`
+  min-width: 225px;
+  height: 100%;
+  width: 15%;
 
-    min-width: 225px;
-    height: 100%;
-    width: 15%;
-  
-    background: whitesmoke;
-    display: flex;
-    
-    flex-direction: column;
-    overflow: hidden;
+  background: whitesmoke;
+  display: flex;
+
+  flex-direction: column;
+  overflow: hidden;
 
   .sidebar__item-list {
     display: flex;
     flex-direction: column;
-    
+
     padding: 1% 7%;
 
     width: 100%;
@@ -24,7 +23,7 @@ const Sidebar = styled.div`
 
   .sidebar__item {
     transition-duration: 350ms;
-  
+
     color: rgb(64, 64, 64);
 
     font-size: 0.9rem;
@@ -33,14 +32,14 @@ const Sidebar = styled.div`
     border-bottom: rgba(41, 41, 41, 0.12) 1px solid;
     padding: 5.5% 0;
   }
-  
+
   .sidebar__item_active {
     font-weight: bolder;
-    
+
     transition-duration: 350ms;
-    
+
     padding-left: 5%;
-    
+
     cursor: default;
   }
 

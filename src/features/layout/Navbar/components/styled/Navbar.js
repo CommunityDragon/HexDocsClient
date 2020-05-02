@@ -46,7 +46,6 @@ const Navbar = styled.nav`
         align-content: center;
         align-items: center;
       }
-     
     }
 
     .navbar__item-icon {
@@ -60,9 +59,9 @@ const Navbar = styled.nav`
     .navbar__item-img {
       height: 70%;
       width: auto;
-      
+
       display: flex;
-      
+
       align-items: center;
       justify-content: center;
       align-content: center;
@@ -81,7 +80,7 @@ const Navbar = styled.nav`
       font-size: 0.8rem;
       height: 100%;
       width: auto;
-      
+
       display: flex;
       justify-items: center;
       align-items: center;
@@ -109,7 +108,7 @@ const Navbar = styled.nav`
     overflow-x: auto;
     .navbar__item {
       min-width: 60px;
-      
+
       .navbar__item-content {
         display: none;
       }

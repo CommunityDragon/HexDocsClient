@@ -3,7 +3,7 @@ import Img from 'react-image-fallback'
 import { NavLink } from 'react-router-dom'
 import { useQuery } from '@apollo/react-hooks'
 
-import Logo from '../assets/logo.webp'
+import Logo from '../assets/logo.png'
 
 import { Navbar } from './styled'
 import { GET_MENU_ITEMS } from '../graphql/queries'
@@ -19,36 +19,32 @@ const Container = () => {
   return (
     <Navbar>
       <div className="navbar__logo">
-        <NavLink
-          to='/'
-          activeClassName='navbar__item--active'
-        >
-          <img src={Logo} className="navbar__logo-img" alt=""/>
+        <NavLink to="/" activeClassName="navbar__item--active">
+          <img src={Logo} className="navbar__logo-img" alt="" />
         </NavLink>
       </div>
-      {data && data.getMenuItems.map(item => (
-        <NavLink
-          key={item.id}
-          to={`/${item.slug}`}
-          className="navbar__item"
-          activeClassName='navbar__item--active'
-        >
-          <div className="navbar__item-icon">
-            <Img
-              className="navbar__item-img"
-              src={item.iconUrl}
-              alt={item.name}
-              fallbackImage={placeholderImage}
-              initialImage={placeholderImage}
-            />
-          </div>
-          <div className='navbar__item-label'>
-            <div className="navbar__item-content">
-              {item.name}
+      {data &&
+        data.getMenuItems.map((item) => (
+          <NavLink
+            key={item.id}
+            to={`/${item.slug}`}
+            className="navbar__item"
+            activeClassName="navbar__item--active"
+          >
+            <div className="navbar__item-icon">
+              <Img
+                className="navbar__item-img"
+                src={item.iconUrl}
+                alt={item.name}
+                fallbackImage={placeholderImage}
+                initialImage={placeholderImage}
+              />
             </div>
-          </div>
-        </NavLink>
-      ))}
+            <div className="navbar__item-label">
+              <div className="navbar__item-content">{item.name}</div>
+            </div>
+          </NavLink>
+        ))}
     </Navbar>
   )
 }

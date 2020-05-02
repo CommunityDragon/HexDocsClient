@@ -6,16 +6,16 @@ const error = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  
+
   .error__image {
     width: 10rem;
     height: auto;
-    
+
     margin-bottom: 5vh;
   }
-  
+
   .error__message {
-    color: rgba(0,0,0,0.75);
+    color: rgba(0, 0, 0, 0.75);
   }
 `
 

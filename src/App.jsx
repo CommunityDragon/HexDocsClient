@@ -23,12 +23,12 @@ const App = () => (
     <Router>
       <div className="App">
         <Navbar />
-        <div className='Container'>
-          <Sidebar/>
-          <div className='Content'>
+        <div className="Container">
+          <Sidebar />
+          <div className="Content">
             <Switch>
-              <Route path='/:category' component={Content}/>
-              <Route exact path="/" component={HomePage}/>
+              <Route path="/:category" component={Content} />
+              <Route exact path="/" component={HomePage} />
             </Switch>
             <CookieConsent
               location="bottom"
@@ -39,11 +39,18 @@ const App = () => (
                 fontSize: '1rem',
                 padding: '0.5rem',
                 background: 'rgba(0,255,55,0.65)',
-                borderRadius: '0.25rem'
+                borderRadius: '0.25rem',
               }}
               cookieName="HextechDocsPoroSnax"
             >
-              This website uses <del>poro snacks</del> cookies to enhance the user experience. See our <a href=""><u>Cookie <del>recipe</del> policy</u></a>
+              This website uses <del>poro snacks</del> cookies to enhance the user experience. See
+              our{' '}
+              <a href="">
+                <u>
+                  Cookie
+                  <del>recipe</del> policy
+                </u>
+              </a>
             </CookieConsent>
           </div>
         </div>
