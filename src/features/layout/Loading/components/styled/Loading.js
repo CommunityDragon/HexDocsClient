@@ -5,11 +5,11 @@ const Loading = styled.div`
     0% {
       opacity: 100%;
     }
-    
+
     50% {
       opacity: 25%;
     }
-    
+
     100% {
       opacity: 100%;
     }
@@ -21,7 +21,7 @@ const Loading = styled.div`
   flex-direction: column;
   align-items: center;
   pointer-events: none;
-  
+
   .load-img {
     width: 10rem;
     height: auto;

@@ -9,4 +9,4 @@ import 'highlight.js/styles/github-gist.css'
 import 'github-markdown-css'
 import './styles/main.sass'
 
-ReactDOM.render(<App/>, document.getElementById('root'))
+ReactDOM.render(<App />, document.getElementById('root'))

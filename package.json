@@ -38,12 +38,10 @@
     "readme": "markdown -f gfm README.md > public/static/readme.html",
     "prestart": "yarn readme",
     "start": "react-scripts start",
+    "lint": "eslint --fix .",
     "prebuild": "yarn readme",
     "build": "react-scripts build",
     "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
   },
   "browserslist": {
     "production": [
@@ -59,7 +57,14 @@
   },
   "devDependencies": {
     "@types/react-router-dom": "^5.1.5",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb": "^18.1.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-react": "^7.19.0",
+    "lint-staged": "^10.2.2",
     "markdown-to-html": "^0.0.13",
-    "node-sass": "^4.14.0"
+    "node-sass": "^4.14.0",
+    "prettier": "^2.0.5"
   }
 }

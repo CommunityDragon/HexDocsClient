@@ -13,18 +13,13 @@ const HomePage = () => {
    * loads the README file
    */
   useEffect(() => {
-    (async () => {
+    ;(async () => {
       setContent(await (await fetch('/static/readme.html')).text())
     })()
   }, [])
 
-
-  return (
-    <div
-      className="markdown-body"
-      dangerouslySetInnerHTML={{ __html: content }}
-    />
-  )
+  // eslint-disable-next-line react/no-danger
+  return <div className="markdown-body" dangerouslySetInnerHTML={{ __html: content }} />
 }
 
 export default HomePage

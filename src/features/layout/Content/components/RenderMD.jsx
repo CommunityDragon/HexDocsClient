@@ -4,23 +4,26 @@ import ReactHtmlParser from 'react-html-parser'
 import hljs from 'highlight.js'
 
 import { rendermd as Rendermd } from './styled'
-import Disclaimer from '../../Disclaimer';
+import Disclaimer from 'features/layout/Disclaimer'
 
 const MarkdownParser = new MarkdownIt('default', {
   html: true,
   linkify: true,
   breaks: false,
   typographer: true,
-  highlight (str, lang) {
+  highlight(str, lang) {
     if (lang && hljs.getLanguage(lang)) {
       try {
-        return hljs.highlight(lang, str).value
-      } catch (__) {}
+        return hljs.highlight(lang, str, false, []).value
+      } catch (error) {
+        return str
+      }
     }
 
     return ''
-  }
-}).use(require('markdown-it-footnote'))
+  },
+})
+  .use(require('markdown-it-footnote'))
   .use(require('markdown-it-sup'))
   .use(require('markdown-it-sub'))
   .use(require('markdown-it-ins'))
@@ -32,22 +35,22 @@ const MarkdownParser = new MarkdownIt('default', {
       smile: [':)', ':-)', ':^)', ':v)'],
       laughing: [':D', 'xD', 'xd', 'XD', 'Xd', ':d'],
       sunglasses: ['8)', '8-)'],
-      heart: ['<3']
-    }
-  }).use(require('markdown-it-container'), 'spoiler', {
+      heart: ['<3'],
+    },
+  })
+  .use(require('markdown-it-container'), 'spoiler', {
     validate: (params) => {
       return params.trim().match(/^spoiler\s+(.*)$/)
     },
 
-    render (tokens, i) {
+    render(tokens, i) {
       const m = tokens[i].info.trim().match(/^spoiler\s+(.*)$/)
 
       if (tokens[i].nesting === 1) {
-        return '<details><summary>' + MarkdownParser.utils.escapeHtml(m[1]) + '</summary> \n'
-      } else {
-        return '</details>\n'
+        return `<details><summary>${MarkdownParser.utils.escapeHtml(m[1])}</summary> \n`
       }
-    }
+      return '</details>\n'
+    },
   })
 
 /**
@@ -56,10 +59,8 @@ const MarkdownParser = new MarkdownIt('default', {
 const RenderMD = ({ md }) => {
   return (
     <Rendermd>
-      <div className="markdown-body">
-        {ReactHtmlParser(MarkdownParser.render(md))}
-      </div>
-      <Disclaimer displayOn={'MOBILE'}/>
+      <div className="markdown-body">{ReactHtmlParser(MarkdownParser.render(md))}</div>
+      <Disclaimer displayOn="MOBILE" />
     </Rendermd>
   )
 }
