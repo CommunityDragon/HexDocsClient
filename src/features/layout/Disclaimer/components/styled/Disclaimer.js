@@ -8,7 +8,7 @@ const Disclaimer = styled.div`
   width: 100%;
 
   color: rgba(111, 111, 111, 0.47);
-  font-size: 0.6rem;
+  font-size: 0.5rem;
 
   border-top: rgba(0, 0, 0, 0.15) 1px solid;
   padding: 3% 2.5% 7.5%;
@@ -23,7 +23,7 @@ const Disclaimer = styled.div`
     }
     transition: 350ms;
     color: rgba(111, 111, 111, 0.76);
-    font-size: 0.8rem;
+    font-size: 0.55rem;
     font-weight: normal;
     text-align: center;
     width: 100%;
@@ -52,9 +52,11 @@ const Disclaimer = styled.div`
     margin-top: 25px;
     padding: 10px 5px;
     border: none;
+    font-size: 0.6rem;
 
     .disclaimer__link {
       padding-bottom: 10px;
+      font-size: 0.8rem;
     }
 
     &--mobile {
