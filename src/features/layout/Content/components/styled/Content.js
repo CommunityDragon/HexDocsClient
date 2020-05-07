@@ -45,7 +45,7 @@ const SubCategories = styled.div`
 
     &:first-child {
       margin: 0 0;
-      padding: 0 0;
+      padding: 1vh 0 0 0;
     }
   }
 `

@@ -12,15 +12,14 @@ import Document from './Document'
  */
 const Container = () => {
   return (
-    <content>
-      <Switch>
-        <Route path="/legal" exact component={pepegastatic} />
-        <Route path="/:category" exact component={Category} />
-        <Route path="/:category/:subcategory" exact component={Subcategory} />
-        <Route path="/:category/:subcategory/:document" exact component={Document} />
-        <Route path="*" component={Error} />
-      </Switch>
-    </content>
+    <Switch>
+      <Route path="/legal" exact component={pepegastatic}/>
+      <Route path="/:category" exact component={Category}/>
+      <Route path="/:category/:subcategory" exact component={Subcategory}/>
+      <Route path="/:category/:subcategory/:document" exact
+             component={Document}/>
+      <Route path="*" component={Error}/>
+    </Switch>
   )
 }
 

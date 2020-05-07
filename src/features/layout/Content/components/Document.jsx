@@ -29,37 +29,29 @@ const Container = ({ match }) => {
 
     if (document) {
       return (
-        <div>
-          <div>
-            {document.authors.length > 0 ? (
-              <h2 className="doc-author">
-                Created by:
-                {document.authors.map((val) => (
-                  <div>
-                    <a href={`https://github.com/${val.github}`}>
-                      {val.name == null ? val.name : val.github}
-                    </a>
-                    <br />
-                  </div>
-                ))}
-              </h2>
-            ) : null}
-            <div className="doc-meta">
-              <div>
-                Created:
-                {moment(document.createdAt).fromNow()}
-              </div>
-              {document.createdAt !== document.updatedAt && (
+        <>
+          {document.authors.length > 0 ? (
+            <h2 className="doc-author">
+              Created by:
+              {document.authors.map((val) => (
                 <div>
-                  Last updated:
-                  {moment(document.updatedAt).fromNow()}
+                  <a href={`https://github.com/${val.github}`}>
+                    {val.name == null ? val.name : val.github}
+                  </a>
+                  <br/>
                 </div>
-              )}
-            </div>
-            <hr />
-            <RenderMD md={document.content} />
+              ))}
+            </h2>
+          ) : null}
+          <div className="doc-meta">
+            <div>Created: {moment(document.createdAt).fromNow()}</div>
+            {document.createdAt !== document.updatedAt && (
+              <div>Last updated: {moment(document.updatedAt).fromNow()}</div>
+            )}
           </div>
-        </div>
+          <hr/>
+          <RenderMD md={document.content}/>
+        </>
       )
     }
     return <Error />

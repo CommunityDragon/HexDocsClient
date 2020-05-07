@@ -40,7 +40,6 @@ const Container = ({ match }) => {
   const RenderMarks = ({ markerName, docs }) => {
     return (
       <div className="subcat__marked-container">
-        <hr />
         <h1 className="subcat__marked-h1">{markerName}</h1>
         <div className="subcat__marked-content">{docs}</div>
       </div>
@@ -78,7 +77,7 @@ const Container = ({ match }) => {
       return <RenderMarks key={v4()} markerName={markername.displayName} docs={display[value]} />
     })
 
-    return <div>{marks}</div>
+    return <>{marks}</>
   }
 
   const GetDocumentList = ({ id, subcat }) => {
@@ -91,11 +90,7 @@ const Container = ({ match }) => {
     if (loading) return <Loading />
     if (error) return <Error message="An unexpected error has occurred." />
 
-    return (
-      <div>
-        <SortedListByMarkerID documents={data} subcat={subcat} />
-      </div>
-    )
+    return <SortedListByMarkerID documents={data} subcat={subcat}/>
   }
 
   return (
