@@ -11,7 +11,7 @@
     "css-reset-and-normalize": "^2.1.0",
     "github-markdown-css": "^4.0.0",
     "graphql": "^15.0.0",
-    "highlight.js": "^10.0.1",
+    "highlight.js": "^10.0.2",
     "markdown-it": "^10.0.0",
     "markdown-it-abbr": "^1.0.4",
     "markdown-it-anchor": "^5.2.7",
@@ -23,7 +23,7 @@
     "markdown-it-mark": "^3.0.0",
     "markdown-it-sub": "^1.0.0",
     "markdown-it-sup": "^1.0.0",
-    "moment": "^2.24.0",
+    "moment": "^2.25.3",
     "react": "^16.13.1",
     "react-cookie-consent": "^3.0.0",
     "react-dom": "^16.13.1",
@@ -32,7 +32,7 @@
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.4.1",
     "styled-components": "^5.1.0",
-    "uuid": "^7.0.3"
+    "uuid": "^8.0.0"
   },
   "scripts": {
     "readme": "markdown -f gfm README.md > public/static/readme.html",
@@ -64,7 +64,7 @@
     "eslint-plugin-react": "^7.19.0",
     "lint-staged": "^10.2.2",
     "markdown-to-html": "^0.0.13",
-    "node-sass": "^4.14.0",
+    "node-sass": "^4.14.1",
     "prettier": "^2.0.5"
   }
 }
