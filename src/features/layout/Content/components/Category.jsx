@@ -36,11 +36,7 @@ const Category = ({ match }) => {
     return <RenderMD md={data} />
   }
 
-  return (
-    <content>
-      <GetReadmeUrl />
-    </content>
-  )
+  return <GetReadmeUrl/>
 }
 
 export default Category

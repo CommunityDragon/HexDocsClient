@@ -3,8 +3,8 @@ import MarkdownIt from 'markdown-it'
 import ReactHtmlParser from 'react-html-parser'
 import hljs from 'highlight.js'
 
-import { rendermd as Rendermd } from './styled'
 import Disclaimer from 'features/layout/Disclaimer'
+import { rendermd as Rendermd } from './styled'
 
 const MarkdownParser = new MarkdownIt('default', {
   html: true,

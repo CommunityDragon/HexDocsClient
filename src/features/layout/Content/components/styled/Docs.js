@@ -19,7 +19,7 @@ const Docs = styled.div`
     display: flex;
     flex-direction: column;
     color: rgba(0, 0, 0, 0.33);
-    padding-bottom: 1vw;
+    padding-bottom: 1vh;
     font-size: 0.7rem;
     line-height: 1rem;
   }
