@@ -5,6 +5,8 @@ const SubCategories = styled.div`
   height: 100%;
   width: 100%;
   font-family: 'Inter', sans-serif;
+  background-color: ${({ theme }) => theme.contentBG};
+  color: ${({ theme }) => theme.contentTextColor}!important;
 
   .link {
     transition-duration: 450ms;
@@ -19,6 +21,8 @@ const SubCategories = styled.div`
     line-height: 150%;
     display: flex;
     flex-direction: column;
+    background-color: ${({ theme }) => theme.contentBG};
+    color: ${({ theme }) => theme.contentTextColor};
   }
 
   .subcat__marked-h1 {
@@ -35,6 +39,7 @@ const SubCategories = styled.div`
 
     a {
       line-height: 1.5rem;
+      color: ${({ theme }) => theme.contentTextColor} !important;
     }
   }
 

@@ -53,8 +53,12 @@ const Container = ({ match }) => {
       },
     })
 
-    if (loading) return <Loading />
-    if (error) return <Error message="Error sorting" />
+    if (loading) {
+      return <Loading/>
+    }
+    if (error) {
+      return <Error message="Error sorting"/>
+    }
 
     const markers = data.getMarkersForSubcategory
     const display = {}
@@ -62,10 +66,25 @@ const Container = ({ match }) => {
       display[mark.id] = []
     })
 
+    documents.getDocumentsForSubcategory.sort((a, b) => {
+      const A = a.title.toUpperCase()
+      const B = b.title.toUpperCase()
+      if (A < B) {
+        return -1
+      }
+
+      if (A > B) {
+        return 1
+      }
+
+      return 0
+    })
+
     documents.getDocumentsForSubcategory.forEach((doc) => {
       doc.markers.forEach((mark) => {
         display[mark.id].push(
-          <NavLink key={v4()} className="link" to={`${subcat.slug}/${doc.slug}`}>
+          <NavLink key={v4()} className="link"
+                   to={`${subcat.slug}/${doc.slug}`}>
             {doc.title}
           </NavLink>,
         )

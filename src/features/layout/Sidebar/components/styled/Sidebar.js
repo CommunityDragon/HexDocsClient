@@ -5,7 +5,7 @@ const Sidebar = styled.div`
   height: 100%;
   width: 15%;
 
-  background: whitesmoke;
+  background: ${({ theme }) => theme.sideBarBG};
   display: flex;
 
   flex-direction: column;
@@ -24,12 +24,12 @@ const Sidebar = styled.div`
   .sidebar__item {
     transition-duration: 350ms;
 
-    color: rgb(64, 64, 64);
+    color: ${({ theme }) => theme.sidebarTextColor};
 
     font-size: 0.9rem;
     font-weight: 500;
 
-    border-bottom: rgba(41, 41, 41, 0.12) 1px solid;
+    border-bottom: ${({ theme }) => theme.sidebarSeparator} 1px solid;
     padding: 5.5% 0;
   }
 
@@ -43,10 +43,29 @@ const Sidebar = styled.div`
     cursor: default;
   }
 
+  .sidebar__item-back {
+    color: ${({ theme }) => theme.sidebarTextColor};
+    cursor: pointer;
+    display: flex;
+    align-content: center;
+    vertical-align: center;
+    transition-duration: 350ms;
+    &:after {
+      content: 'Go back';
+    }
+    &:hover {
+      filter: invert(50%);
+      transition-duration: 350ms;
+    }
+  }
+
   @media (max-width: 767px) {
     width: 100%;
     height: 50px;
     overflow-x: auto;
+    .sidebar__item-back {
+      display: none !important;
+    }
     .sidebar__item-list {
       padding: 0;
       flex-direction: row;
