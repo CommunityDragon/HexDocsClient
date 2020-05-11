@@ -3,9 +3,35 @@ import styled from 'styled-components'
 const Docs = styled.div`
   height: 100%;
   width: 100%;
+  background-color: ${({ theme }) => theme.contentBG};
+  color: ${({ theme }) => theme.contentTextColor};
+  max-width: 1000px;
+  .markdown-body {
+    max-width: 1000px;
+    hr {
+      background-color: ${({ theme }) => theme.markdownHr};
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+      border-bottom: 1px solid ${({ theme }) => theme.markdownSeparator};
+    }
+
+    code,
+    pre {
+      font-family: JetBrainsMono, source-code-pro, Menlo, Monaco, Consolas, monospace;
+      background-color: ${({ theme }) => theme.contentCodeBG};
+    }
+
+    pre > code {
+      background-color: rgba(0, 0, 0, 0);
+    }
+  }
 
   hr {
-    border-top: 1px solid rgba(0, 0, 0, 0.11);
+    border-color: ${({ theme }) => theme.contentMetaSeparator};
   }
 
   .doc-author {
@@ -18,7 +44,7 @@ const Docs = styled.div`
   .doc-meta {
     display: flex;
     flex-direction: column;
-    color: rgba(0, 0, 0, 0.33);
+    color: ${({ theme }) => theme.contentMetaColor};
     padding-bottom: 1vh;
     font-size: 0.7rem;
     line-height: 1rem;
