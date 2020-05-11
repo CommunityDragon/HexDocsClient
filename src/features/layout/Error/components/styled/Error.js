@@ -15,7 +15,7 @@ const error = styled.div`
   }
 
   .error__message {
-    color: rgba(0, 0, 0, 0.75);
+    color: ${({ theme }) => theme.contentTextColor};
   }
 `
 
