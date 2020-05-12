@@ -32,7 +32,7 @@ const App = () => {
           localStorage.setItem('currentTheme', 'dark')
           return DarkTheme
         }
-        localStorage.setItem('currentTheme', 'dark')
+        localStorage.setItem('currentTheme', 'light')
         return LightTheme
       }
       return LightTheme
