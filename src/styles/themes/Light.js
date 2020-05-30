@@ -12,6 +12,7 @@ const LightTheme = {
   footerLinkColor: 'rgba(111, 111, 111, 0.76)',
   footerLinkHover: 'rgba(111, 111, 111, 1)',
   tocColor: 'rgba(0,155,255,0.85)',
+  scrollbarColor: 'rgba(0,0,0,0.25)',
   sideBarBG: 'whitesmoke',
   sidebarSeparator: 'rgba(41, 41, 41, 0.12)',
   sidebarTextColor: 'rgb(64, 64, 64)',

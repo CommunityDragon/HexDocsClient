@@ -15,7 +15,7 @@ const Docs = styled.div`
     h3,
     h4 {
       border-bottom: 1px solid ${({ theme }) => theme.markdownSeparator};
-      padding-bottom: 0.3em
+      padding-bottom: 0.3em;
     }
 
     code,

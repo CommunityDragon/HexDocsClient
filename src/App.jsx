@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react'
+import React, { useEffect } from 'react'
 import CookieConsent from 'react-cookie-consent'
 import ApolloClient from 'apollo-boost'
 import { InMemoryCache } from 'apollo-cache-inmemory'
@@ -12,6 +12,7 @@ import AppStyled from 'styles/styled/App'
 import DarkTheme from 'styles/themes/Dark'
 import LightTheme from 'styles/themes/Light'
 import HomePage from './pages/home'
+
 import 'styles/App.sass'
 
 const client = new ApolloClient({
@@ -32,7 +33,6 @@ const App = () => {
           localStorage.setItem('currentTheme', 'dark')
           return DarkTheme
         }
-        localStorage.setItem('currentTheme', 'dark')
         localStorage.setItem('currentTheme', 'light')
         return LightTheme
       }
@@ -43,15 +43,6 @@ const App = () => {
     }
     return LightTheme
   }
-
-  useEffect(() => {
-    if (localStorage.getItem('currentTheme') === 'dark') {
-      require('highlight.js/styles/night-owl.css')
-
-    } else {
-      require('highlight.js/styles/vs.css')
-    }
-  },[])
 
   return (
     <ApolloProvider client={client}>

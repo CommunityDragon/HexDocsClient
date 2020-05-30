@@ -12,6 +12,7 @@ const DarkTheme = {
   footerLinkColor: 'rgba(111, 111, 111, 0.76)',
   footerLinkHover: 'rgba(111, 111, 111, 1)',
   tocColor: 'rgba(255,255,255,0.50)',
+  scrollbarColor: 'rgba(255,255,255,0.75)',
   sideBarBG: '#252525',
   sidebarSeparator: 'rgba(214, 214, 214, 0.12)',
   sidebarTextColor: 'rgb(221, 221, 221)',
