@@ -10,7 +10,7 @@ const Disclaimer = styled.div`
   background-color: ${({ theme }) => theme.sideBarBG};
 
   color: ${({ theme }) => theme.footerLegal};
-  font-size: 0.5rem;
+  font-size: 0.44rem;
 
   border-top: ${({ theme }) => theme.footerSeparator} 1px solid;
   padding: 3% 2.5% 7.5%;
@@ -18,6 +18,7 @@ const Disclaimer = styled.div`
 
   .iconbutton {
     span {
+      font-size: 1rem;
       pointer-events: all;
       user-select: none;
       cursor: pointer;
@@ -38,7 +39,7 @@ const Disclaimer = styled.div`
     }
     transition: 350ms;
     color: ${({ theme }) => theme.footerLinkColor};
-    font-size: 0.55rem;
+    font-size: 0.47rem;
     font-weight: normal;
     text-align: center;
     width: 100%;
@@ -46,7 +47,7 @@ const Disclaimer = styled.div`
   }
 
   .disclaimer__link > a {
-    color: ${({ theme }) => theme.footerLegal} !important;
+    color: ${({ theme }) => theme.footerLegal};
     pointer-events: all;
     padding: 0 0;
     &::after {
@@ -68,11 +69,12 @@ const Disclaimer = styled.div`
     margin-top: 25px;
     padding: 10px 5px;
     border: none;
-    font-size: 0.6rem;
+    font-size: 0.5rem;
 
     .disclaimer__link {
       padding-bottom: 10px;
-      font-size: 0.8rem;
+      font-size: 0.6rem;
+      
     }
 
     &--mobile {

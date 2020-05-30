@@ -38,7 +38,7 @@ const Container = ({ match }) => {
                   <a href={`https://github.com/${val.github}`}>
                     {val.name == null ? val.name : val.github}
                   </a>
-                  <br/>
+                  <br />
                 </div>
               ))}
             </h2>
@@ -49,8 +49,8 @@ const Container = ({ match }) => {
               <div>Last updated: {moment(document.updatedAt).fromNow()}</div>
             )}
           </div>
-          <hr/>
-          <RenderMD md={document.content}/>
+          <hr />
+          <RenderMD title={document.title} md={`[toc] ${document.content}`} />
         </>
       )
     }

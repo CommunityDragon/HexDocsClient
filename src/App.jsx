@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import CookieConsent from 'react-cookie-consent'
 import ApolloClient from 'apollo-boost'
 import { InMemoryCache } from 'apollo-cache-inmemory'
@@ -32,6 +32,7 @@ const App = () => {
           localStorage.setItem('currentTheme', 'dark')
           return DarkTheme
         }
+        localStorage.setItem('currentTheme', 'dark')
         localStorage.setItem('currentTheme', 'light')
         return LightTheme
       }
@@ -43,20 +44,29 @@ const App = () => {
     return LightTheme
   }
 
+  useEffect(() => {
+    if (localStorage.getItem('currentTheme') === 'dark') {
+      require('highlight.js/styles/night-owl.css')
+
+    } else {
+      require('highlight.js/styles/vs.css')
+    }
+  },[])
+
   return (
     <ApolloProvider client={client}>
       <Router>
         <ThemeProvider theme={getTheme}>
           <AppStyled>
             <div className="App">
-              <Navbar/>
+              <Navbar />
 
               <div className="Container">
-                <Sidebar/>
+                <Sidebar />
                 <div className="Content">
                   <Switch>
-                    <Route path="/:category" component={Content}/>
-                    <Route exact path="/" component={HomePage}/>
+                    <Route path="/:category" component={Content} />
+                    <Route exact path="/" component={HomePage} />
                   </Switch>
                   <CookieConsent
                     location="bottom"
@@ -71,8 +81,7 @@ const App = () => {
                     }}
                     cookieName="HextechDocsPoroSnax"
                   >
-                    This website uses <del>poro snacks</del> cookies to enhance
-                    the user experience.
+                    This website uses <del>poro snacks</del> cookies to enhance the user experience.
                     See our{' '}
                     <a href="">
                       <u>

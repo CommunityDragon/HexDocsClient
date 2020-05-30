@@ -1,4 +1,5 @@
 const DarkTheme = {
+  anchorColor: 'rgba(255, 255, 255, 0.5)',
   contentBG: '#212121',
   contentCodeBG: 'rgba(0,0,0,0.25)',
   contentMetaColor: 'rgba(255, 255, 255, 0.33)',
@@ -10,6 +11,7 @@ const DarkTheme = {
   footerLegal: 'rgba(111, 111, 111, 0.47)',
   footerLinkColor: 'rgba(111, 111, 111, 0.76)',
   footerLinkHover: 'rgba(111, 111, 111, 1)',
+  tocColor: 'rgba(255,255,255,0.50)',
   sideBarBG: '#252525',
   sidebarSeparator: 'rgba(214, 214, 214, 0.12)',
   sidebarTextColor: 'rgb(221, 221, 221)',

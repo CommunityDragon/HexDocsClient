@@ -5,12 +5,25 @@ const RenderMD = styled.div`
   padding: 1% 0 5% 0;
   background-color: ${({ theme }) => theme.contentBG};
   color: ${({ theme }) => theme.contentTextColor};
+  
   .Content {
     background-color: ${({ theme }) => theme.contentBG};
     color: ${({ theme }) => theme.contentTextColor};
     .markdown-body {
       background-color: ${({ theme }) => theme.contentBG};
       color: ${({ theme }) => theme.contentTextColor};
+    }
+  }
+
+  .anchors {
+    color: ${({theme}) => theme.anchorColor} !important;
+    transition-duration: 250ms;
+    transform: rotate(45deg);
+    font-size: 1rem;
+    &:hover {
+      transition-duration: 250ms;
+      filter: invert(50%);
+      text-decoration: none;
     }
   }
 
