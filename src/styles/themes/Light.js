@@ -1,5 +1,4 @@
 const LightTheme = {
-  anchorColor: 'rgba(0, 0, 0, 0.5)',
   contentBG: '#ffffff',
   contentCodeBG: 'rgba(0,0,0,0.05)',
   contentMetaColor: 'rgba(0, 0, 0, 0.33)',

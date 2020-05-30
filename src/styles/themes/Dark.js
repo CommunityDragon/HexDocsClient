@@ -1,5 +1,4 @@
 const DarkTheme = {
-  anchorColor: 'rgba(255, 255, 255, 0.5)',
   contentBG: '#212121',
   contentCodeBG: 'rgba(0,0,0,0.25)',
   contentMetaColor: 'rgba(255, 255, 255, 0.33)',

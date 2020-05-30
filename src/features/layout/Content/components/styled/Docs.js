@@ -5,7 +5,9 @@ const Docs = styled.div`
   width: 100%;
   background-color: ${({ theme }) => theme.contentBG};
   color: ${({ theme }) => theme.contentTextColor};
+  max-width: 1000px;
   .markdown-body {
+    max-width: 1000px;
     hr {
       background-color: ${({ theme }) => theme.markdownHr};
     }

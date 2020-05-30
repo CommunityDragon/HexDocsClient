@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import CookieConsent from 'react-cookie-consent'
 import ApolloClient from 'apollo-boost'
 import { InMemoryCache } from 'apollo-cache-inmemory'
