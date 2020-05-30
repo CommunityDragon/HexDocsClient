@@ -13,6 +13,14 @@ html, body, #root
   width: 100vw
   height: 100vh
   overflow: hidden
+  scroll-behavior: smooth
+  font-size: calc(24px + (48 - 24) * ((100vw - 474px) / (3840 - 474)))
+  @media (min-width: 1300px)
+    font-size: 2vmin
+  @media (min-width: 800px)
+    font-size: 2vmin
+  @media (max-width: 500px)
+    font-size: 6vmin
 
 body
   margin: 0
