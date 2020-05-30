@@ -42,7 +42,7 @@
     "prestart": "yarn readme && yarn legal",
     "start": "react-scripts start",
     "lint": "eslint --fix .",
-    "prebuild": "yarn readme",
+    "prebuild": "yarn readme && yarn legal",
     "build": "react-scripts build",
     "eject": "react-scripts eject"
   },

@@ -9,20 +9,20 @@ const AppStyled = styled.div`
     width: 1vh;
     height: 1vw;
   }
-  
+
   *::-webkit-scrollbar-track {
-    background: rgba(0,0,0,0);
+    background: rgba(0, 0, 0, 0);
   }
-  
+
   *::-webkit-scrollbar-thumb {
-    background-color: rgba(255,255,255,0.75);
+    background-color: ${({ theme }) => theme.scrollbarColor};
     border-radius: 100vw;
-    border: 3px solid rgba(255,255,255,0);
+    border: 3px solid rgba(255, 255, 255, 0);
   }
-  
+
   * {
     scrollbar-width: thin;
-    scrollbar-color: rgba(255,255,255,1) rgba(255,255,255,0);
+    scrollbar-color: ${({ theme }) => theme.scrollbarColor} rgba(255, 255, 255, 0);
   }
 
   h1,
@@ -107,7 +107,7 @@ const AppStyled = styled.div`
       margin-bottom: 2vh;
       border-bottom: 1px solid ${({ theme }) => theme.markdownSeparator};
       a {
-        color: ${({theme}) => theme.tocColor};
+        color: ${({ theme }) => theme.tocColor};
         transition-duration: 275ms;
         &:hover {
           text-decoration: none;
@@ -167,19 +167,19 @@ const AppStyled = styled.div`
       border-color: ${({ theme }) => theme.markdownTableBorder};
     }
   }
-  
+
   @media (min-width: 1300px) {
     .markdown-body {
       max-width: 1250px;
       font-size: 0.75rem;
-    }  
+    }
   }
-  
+
   @media (min-width: 3000px) {
     .markdown-body {
       max-width: 1500px;
       font-size: 0.8rem;
-    }  
+    }
   }
 
   @media (max-width: 767px) {
@@ -187,7 +187,7 @@ const AppStyled = styled.div`
     .Container {
       flex-direction: column;
     }
-    
+
     .markdown-body {
       font-size: 0.65rem;
     }
