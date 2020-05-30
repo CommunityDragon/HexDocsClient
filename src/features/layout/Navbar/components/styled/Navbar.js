@@ -77,7 +77,7 @@ const Navbar = styled.nav`
     .navbar__item-content {
       color: whitesmoke;
       white-space: nowrap;
-      font-size: 0.8rem;
+      font-size: 0.7rem;
       height: 100%;
       width: auto;
 

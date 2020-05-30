@@ -26,7 +26,7 @@ const Sidebar = styled.div`
 
     color: ${({ theme }) => theme.sidebarTextColor};
 
-    font-size: 0.9rem;
+    font-size: 0.7rem;
     font-weight: 500;
 
     border-bottom: ${({ theme }) => theme.sidebarSeparator} 1px solid;
@@ -51,6 +51,11 @@ const Sidebar = styled.div`
     vertical-align: center;
     transition-duration: 350ms;
     &:after {
+      display: flex;
+      align-content: center;
+      vertical-align: middle;
+      transition-duration: 350ms;
+      line-height: 1rem;
       content: 'Go back';
     }
     &:hover {

@@ -5,9 +5,7 @@ const Docs = styled.div`
   width: 100%;
   background-color: ${({ theme }) => theme.contentBG};
   color: ${({ theme }) => theme.contentTextColor};
-  max-width: 1000px;
   .markdown-body {
-    max-width: 1000px;
     hr {
       background-color: ${({ theme }) => theme.markdownHr};
     }
@@ -17,6 +15,7 @@ const Docs = styled.div`
     h3,
     h4 {
       border-bottom: 1px solid ${({ theme }) => theme.markdownSeparator};
+      padding-bottom: 0.3em
     }
 
     code,

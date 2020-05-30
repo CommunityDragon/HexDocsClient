@@ -5,6 +5,26 @@ const AppStyled = styled.div`
   height: 100%;
   color: ${({ theme }) => theme.contentTextColor};
 
+  *::-webkit-scrollbar {
+    width: 1vh;
+    height: 1vw;
+  }
+  
+  *::-webkit-scrollbar-track {
+    background: rgba(0,0,0,0);
+  }
+  
+  *::-webkit-scrollbar-thumb {
+    background-color: rgba(255,255,255,0.75);
+    border-radius: 100vw;
+    border: 3px solid rgba(255,255,255,0);
+  }
+  
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255,255,255,1) rgba(255,255,255,0);
+  }
+
   h1,
   h2,
   h3,
@@ -68,6 +88,7 @@ const AppStyled = styled.div`
     color: ${({ theme }) => theme.contentTextColor};
     overflow-y: auto;
     overflow-x: hidden;
+    scroll-behavior: smooth;
 
     a {
       color: ${({ theme }) => theme.linkColor};
@@ -78,6 +99,51 @@ const AppStyled = styled.div`
     max-width: 1000px;
     background-color: ${({ theme }) => theme.contentBG};
     color: ${({ theme }) => theme.contentTextColor};
+    scroll-behavior: smooth;
+    font-variant-ligatures: none;
+    font-size: 0.85rem;
+
+    .table-of-contents {
+      margin-bottom: 2vh;
+      border-bottom: 1px solid ${({ theme }) => theme.markdownSeparator};
+      a {
+        color: ${({theme}) => theme.tocColor};
+        transition-duration: 275ms;
+        &:hover {
+          text-decoration: none;
+          filter: invert(50%);
+        }
+      }
+
+      ol {
+        padding-left: 1em;
+        counter-increment: ol-index;
+        counter-reset: li-index;
+        list-style: none;
+
+        &:before {
+          content: ' ';
+        }
+
+        li {
+          counter-increment: li-index;
+          &:before {
+            content: counter(li-index) '. ';
+          }
+        }
+
+        li > ol {
+          counter-increment: ol-index;
+          padding-left: 1.5em;
+          counter-reset: li-index;
+          li {
+            &:before {
+              content: counter(li-index, lower-alpha) '. ';
+            }
+          }
+        }
+      }
+    }
 
     ul {
       list-style: disc outside;
@@ -101,11 +167,29 @@ const AppStyled = styled.div`
       border-color: ${({ theme }) => theme.markdownTableBorder};
     }
   }
+  
+  @media (min-width: 1300px) {
+    .markdown-body {
+      max-width: 1250px;
+      font-size: 0.75rem;
+    }  
+  }
+  
+  @media (min-width: 3000px) {
+    .markdown-body {
+      max-width: 1500px;
+      font-size: 0.8rem;
+    }  
+  }
 
   @media (max-width: 767px) {
     height: 100%;
     .Container {
       flex-direction: column;
+    }
+    
+    .markdown-body {
+      font-size: 0.65rem;
     }
 
     .Content {

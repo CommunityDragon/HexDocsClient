@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 const SubCategories = styled.div`
-  font-size: 1rem;
+  font-size: 0.8rem;
   height: 100%;
   width: 100%;
   font-family: 'Inter', sans-serif;
@@ -18,7 +18,6 @@ const SubCategories = styled.div`
   }
 
   .docs {
-    line-height: 150%;
     display: flex;
     flex-direction: column;
     background-color: ${({ theme }) => theme.contentBG};
@@ -38,7 +37,7 @@ const SubCategories = styled.div`
     padding: 0.75rem 0 0 1rem;
 
     a {
-      line-height: 1.5rem;
+      line-height: 2vh;
       color: ${({ theme }) => theme.contentTextColor} !important;
     }
   }
@@ -46,12 +45,25 @@ const SubCategories = styled.div`
   .subcat__marked-container {
     display: flex;
     flex-direction: column;
-    margin: 1rem 0;
+    margin: 0rem 0;
 
     &:first-child {
       margin: 0 0;
       padding: 1vh 0 0 0;
     }
+  }
+  
+  @media (max-height: 700px) {
+    .subcat__marked-content {
+      a {
+        line-height: 2vw;
+        color: ${({ theme }) => theme.contentTextColor} !important;
+      }
+    }
+  }
+  
+  @media (max-width: 767px) {
+    font-size: 1.75vh;
   }
 `
 

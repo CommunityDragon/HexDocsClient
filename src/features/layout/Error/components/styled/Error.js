@@ -16,6 +16,8 @@ const error = styled.div`
 
   .error__message {
     color: ${({ theme }) => theme.contentTextColor};
+    font-size: 1rem;
+    text-align: center;
   }
 `
 
