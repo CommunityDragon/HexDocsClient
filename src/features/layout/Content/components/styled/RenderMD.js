@@ -22,7 +22,7 @@ const RenderMD = styled.div`
     font-size: 1rem;
     &:hover {
       transition-duration: 250ms;
-      filter: invert(50%);
+      opacity: 50%;
       text-decoration: none;
     }
   }
