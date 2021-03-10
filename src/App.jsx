@@ -16,7 +16,7 @@ import HomePage from './pages/home'
 import 'styles/App.sass'
 
 const client = new ApolloClient({
-  uri: 'https://hextechdocs-api.celerity.gg/graphql?origin=communitydragon',
+  uri: 'https://hextechdocs.dev/graphql?origin=communitydragon',
   cache: new InMemoryCache(),
 })
 
